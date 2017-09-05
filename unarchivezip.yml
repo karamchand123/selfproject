@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  gather_facts: no
+  become: yes
+  tasks:
+  - name: unarchiving the zip
+    unarchive:
+      src: /home/ubuntu/selfproject/p-1664--Student_Record_and_Information_System.zip
+      dest: /home/ubuntu/selfproject/
