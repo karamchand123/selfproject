@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  become: yes
+  gather_facts: no
+  tasks:
+  - name: copying zip to production from build folder
+    copy:
+      src: /home/ubuntu/selfproject/build/deploy.zip
+      dest: /home/ubuntu/selfproject/production/deploy.zip
+      
+  - name: unarchiving zip in the production folder
+    unarchive:
+     src: /home/ubuntu/selfproject/production/deploy.zip
+     dest: /home/ubuntu/selfproject/production/
